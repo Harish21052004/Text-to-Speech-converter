@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speak converter</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="topic">Text To Speech converter</div>
+            <div class="textarea">
+                <textarea  class="content" placeholder="Paste content" id="content">
+                    
+                </textarea>               
+            </div>
+            <div class="button">
+                <button id="sound" onclick="speech()">Convert</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let sound = document.getElementById("sound");
+        let content = document.getElementById("content");          
+        const speech = () =>{
+            let read = new SpeechSynthesisUtterance(`${content.value} `);
+            speechSynthesis.speak(read);
+            console.log(content.value);
+        }
+    </script>    
+</body>
+</html>
